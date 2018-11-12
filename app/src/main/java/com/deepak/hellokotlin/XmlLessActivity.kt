@@ -1,12 +1,12 @@
 package com.deepak.hellokotlin
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import org.jetbrains.anko.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class XmlLessActivity : AppCompatActivity() {
 
@@ -17,8 +17,8 @@ class XmlLessActivity : AppCompatActivity() {
 }
 
 class XmlLessActivityUi : AnkoComponent<XmlLessActivity> {
-    private val xmlStyles = { v: Any->
-        when(v) {
+    private val xmlStyles = { v: Any ->
+        when (v) {
             is Button -> v.textSize = 20f
             is EditText -> v.textSize = 16f
         }
@@ -27,7 +27,7 @@ class XmlLessActivityUi : AnkoComponent<XmlLessActivity> {
     override fun createView(ui: AnkoContext<XmlLessActivity>) = with(ui) {
         verticalLayout {
             padding = dip(16)
-            val name = editText{
+            val name = editText {
                 hint = "Name"
             }
             button("Submit") {
